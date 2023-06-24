@@ -34,6 +34,8 @@
                 "isHnsEnabled": true,
                 "networkAcls": {
                     "bypass": "AzureServices",
+                    "virtualNetworkRules": [],
+                    "ipRules": [],
                     "defaultAction": "Allow"
                 },
                 "supportsHttpsTrafficOnly": true,
@@ -78,6 +80,8 @@
                     "enabled": true,
                     "days": 7
                 },
+                "cors": {
+                },
                 "deleteRetentionPolicy": {
                     "allowPermanentDelete": false,
                     "enabled": true,
@@ -97,6 +101,10 @@
                 "tier": "Standard"
             },
             "properties": {
+                "protocolSettings": {
+                },
+                "cors": {
+                },
                 "shareDeleteRetentionPolicy": {
                     "enabled": true,
                     "days": 7
@@ -109,7 +117,11 @@
             "name": "[concat(parameters('storageAccounts_spbicodemos2_name'), '/default')]",
             "dependsOn": [
                 "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_spbicodemos2_name'))]"
-            ]
+            ],
+            "properties": {
+                "cors": {
+                }
+            }
         },
         {
             "type": "Microsoft.Storage/storageAccounts/tableServices",
@@ -117,7 +129,12 @@
             "name": "[concat(parameters('storageAccounts_spbicodemos2_name'), '/default')]",
             "dependsOn": [
                 "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_spbicodemos2_name'))]"
-            ]
+            ],
+            "properties": {
+                "cors": {
+                    "corsRules": []
+                }
+            }
         }
     ]
 }
