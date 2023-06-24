@@ -80,9 +80,6 @@
                     "enabled": true,
                     "days": 7
                 },
-                "cors": {
-                    "corsRules": []
-                },
                 "deleteRetentionPolicy": {
                     "allowPermanentDelete": false,
                     "enabled": true,
@@ -102,12 +99,6 @@
                 "tier": "Standard"
             },
             "properties": {
-                "protocolSettings": {
-                    "smb": {}
-                },
-                "cors": {
-                    "corsRules": []
-                },
                 "shareDeleteRetentionPolicy": {
                     "enabled": true,
                     "days": 7
@@ -120,12 +111,7 @@
             "name": "[concat(parameters('storageAccounts_spbicodemos2_name'), '/default')]",
             "dependsOn": [
                 "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_spbicodemos2_name'))]"
-            ],
-            "properties": {
-                "cors": {
-                    "corsRules": []
-                }
-            }
+            ]
         },
         {
             "type": "Microsoft.Storage/storageAccounts/tableServices",
@@ -133,12 +119,7 @@
             "name": "[concat(parameters('storageAccounts_spbicodemos2_name'), '/default')]",
             "dependsOn": [
                 "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_spbicodemos2_name'))]"
-            ],
-            "properties": {
-                "cors": {
-                    "corsRules": []
-                }
-            }
+            ]
         }
     ]
 }
