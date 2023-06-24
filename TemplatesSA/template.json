@@ -101,10 +101,6 @@
                 "tier": "Standard"
             },
             "properties": {
-                "protocolSettings": {
-                },
-                "cors": {
-                },
                 "shareDeleteRetentionPolicy": {
                     "enabled": true,
                     "days": 7
@@ -119,8 +115,6 @@
                 "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_spbicodemos2_name'))]"
             ],
             "properties": {
-                "cors": {
-                }
             }
         },
         {
@@ -131,9 +125,6 @@
                 "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_spbicodemos2_name'))]"
             ],
             "properties": {
-                "cors": {
-                    "corsRules": []
-                }
             }
         }
     ]
